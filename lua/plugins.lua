@@ -45,6 +45,16 @@ return require('packer').startup(function(use)
   use { 'folke/tokyonight.nvim' }
   use { 'catppuccin/nvim',  as =  'catppucin' } 
   use { 'gruvbox-community/gruvbox' }  
+  use { 
+      'olivercederborg/poimandres.nvim',
+      config = function()
+          require('poimandres').setup {
+              -- leave this setup function empty for default config
+              -- or refer to the configuration section
+              -- for configuration options
+          }
+      end
+  }
 
   -- Some vim line
   use {
@@ -74,8 +84,12 @@ return require('packer').startup(function(use)
   use { 'hrsh7th/cmp-nvim-lua' }
   use { 'hrsh7th/cmp-buffer' }
   use { 'hrsh7th/cmp-path' }
-  use { 'hrsh7th/cmp-cmdline' }
+  -- use { 'hrsh7th/cmp-cmdline' }
   use { 'hrsh7th/nvim-cmp' }
+  
+  -- LuaSnip stuff
+  use { 'L3MON4D3/LuaSnip' }
+  use { 'saadparwaiz1/cmp_luasnip' }
 
   -- Git tracking
   use { 'tpope/vim-fugitive' }
