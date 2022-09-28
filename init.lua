@@ -21,9 +21,12 @@ require('nvim-treesitter.configs').setup({
     ensure_installed = {
         "python", 
         "javascript", 
-		"typescript", 
-		"rust",
-		"lua",
+        "typescript", 
+        "rust",
+        "lua",
     },
     highlight = { enable = true },
+    indent = { enable = true },
 })
+
+require('autocmd')
