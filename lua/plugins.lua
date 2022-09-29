@@ -38,71 +38,71 @@ packer.init({
 })
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use { 'wbthomason/packer.nvim' } 
+    -- Packer can manage itself
+    use { 'wbthomason/packer.nvim' }
 
-  -- Theming
-  use { 'folke/tokyonight.nvim' }
-  use { 'catppuccin/nvim',  as =  'catppucin' } 
-  use { 'gruvbox-community/gruvbox' }  
-  use { 
-      'olivercederborg/poimandres.nvim',
-      config = function()
-          require('poimandres').setup {
-              -- leave this setup function empty for default config
-              -- or refer to the configuration section
-              -- for configuration options
-          }
-      end
-  }
+    -- Theming
+    use { 'folke/tokyonight.nvim' }
+    use { 'catppuccin/nvim',  as =  'catppucin' }
+    use { 'gruvbox-community/gruvbox' }
+    use {
+        'olivercederborg/poimandres.nvim',
+        config = function()
+            require('poimandres').setup {
+                -- leave this setup function empty for default config
+                -- or refer to the configuration section
+                -- for configuration options
+            }
+        end
+    }
 
-  -- Some vim line
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+    -- Some vim line
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 
-  -- Some file tree baby
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icons
-    },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  }
+    -- Some file tree baby
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = {
+            'kyazdani42/nvim-web-devicons', -- optional, for file icons
+        },
+        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }
 
-  -- Treesitter
-  use { 'nvim-treesitter/nvim-treesitter' }
+    -- Treesitter
+    use { 'nvim-treesitter/nvim-treesitter' }
 
-  -- Mason 
-  use { 'williamboman/mason.nvim' } 
-  use { 'williamboman/mason-lspconfig.nvim' }
+    -- Mason
+    use { 'williamboman/mason.nvim' }
+    use { 'williamboman/mason-lspconfig.nvim' }
 
-  -- Language Server Protocole
-  use { 'neovim/nvim-lspconfig' }
-  use { 'hrsh7th/cmp-nvim-lsp' }
-  use { 'hrsh7th/cmp-nvim-lua' }
-  use { 'hrsh7th/cmp-buffer' }
-  use { 'hrsh7th/cmp-path' }
-  -- use { 'hrsh7th/cmp-cmdline' }
-  use { 'hrsh7th/nvim-cmp' }
-  
-  -- LuaSnip stuff
-  use { 'L3MON4D3/LuaSnip' }
-  use { 'saadparwaiz1/cmp_luasnip' }
+    -- Language Server Protocole
+    use { 'neovim/nvim-lspconfig' }
+    use { 'hrsh7th/cmp-nvim-lsp' }
+    use { 'hrsh7th/cmp-nvim-lua' }
+    use { 'hrsh7th/cmp-buffer' }
+    use { 'hrsh7th/cmp-path' }
+    -- use { 'hrsh7th/cmp-cmdline' }
+    use { 'hrsh7th/nvim-cmp' }
+    use { 'L3MON4D3/LuaSnip' }
+    use { 'saadparwaiz1/cmp_luasnip' }
+    use { 'jose-elias-alvarez/null-ls.nvim' }
+    use { 'onsails/lspkind.nvim' }
 
-  -- Git tracking
-  use { 'tpope/vim-fugitive' }
+    -- Git tracking
+    use { 'tpope/vim-fugitive' }
 
-  -- Telescope
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
-  
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
-	if PACKER_BOOTSTRAP then
-		require("packer").sync()
-	end
-end)  
+    -- Telescope
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
+
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+    if PACKER_BOOTSTRAP then
+        require("packer").sync()
+    end
+end)

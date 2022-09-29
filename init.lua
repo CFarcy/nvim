@@ -8,6 +8,7 @@ require('keymaps')
 require('themes')
 require('lspsetup')
 require('completion')
+require('null-ls-config')
 
 -- Nvim-tree ?
 vim.g.loaded = true
@@ -19,14 +20,16 @@ require("nvim-tree").setup()
 vim.cmd [[highlight NvimTreeNormal guibg=none]]
 require('nvim-treesitter.configs').setup({
     ensure_installed = {
-        "python", 
-        "javascript", 
-        "typescript", 
+        "python",
+        "javascript",
+        "typescript",
         "rust",
         "lua",
     },
     highlight = { enable = true },
-    indent = { enable = true },
+    --   treesitter indent not working well with python, :'(
+    indent = { enable = false },
 })
 
 require('autocmd')
+

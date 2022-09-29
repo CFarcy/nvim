@@ -12,6 +12,6 @@ setkeymap("i", "{", "{}<left>")
 setkeymap("i", "(", "()<left>")
 setkeymap("i", "(<space>", "()")
 setkeymap("i", "[<CR>", "[<CR>]<ESC>O")
-setkeymap("i", "(<CR>", "[<CR>)<ESC>O")
+setkeymap("i", "(<CR>", "(<CR>)<ESC>O")
 setkeymap("i", "{<CR>", "{<CR>}<ESC>O")
 

@@ -15,34 +15,47 @@ end
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+local lspconfig = require('lspconfig')
+-- Lua
+lspconfig['sumneko_lua'].setup({
+    on_attach = on_attach,
+    capapilities = capabilities,
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' },
+            }
+        }
+    }
+})
+
+
 -- Typescript-language-server
-require('lspconfig')['tsserver'].setup({
+lspconfig['tsserver'].setup({
     on_attach = on_attach,
     capabilities = capabilities,
 })
 
 -- Eslint vscode server, needed ?
-require('lspconfig')['eslint'].setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-})
+-- lspconfig['eslint'].setup({
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+-- })
 
--- Python jedi
-require('lspconfig')['jedi_language_server'].setup({
+-- Python jedi, look likes the best for Django
+lspconfig['jedi_language_server'].setup({
     on_attach = on_attach,
     capapilities = capabilities,
 })
 
--- Python pyright, usefull ?
-require('lspconfig')['pyright'].setup({
-    on_attach = function(client)
-        client.server_capabilities.completionProvider = false
-    end,
-    capabilitites = capabilities,
-})
+-- Python pyright, what is the difference with jedi?
+-- lspconfig['pyright'].setup({
+--     on_attach = on_attach,
+--     capabilitites = capabilities,
+-- })
 
 -- Rust
-require('lspconfig')['rust_analyzer'].setup({
+lspconfig['rust_analyzer'].setup({
     on_attach = on_attach,
     capapilities = capabilities,
 })
