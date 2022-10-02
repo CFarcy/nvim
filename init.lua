@@ -31,5 +31,5 @@ require('nvim-treesitter.configs').setup({
     indent = { enable = false },
 })
 
-require('autocmd')
-
+require("autocmd")
+require("nvim-autopairs").setup()

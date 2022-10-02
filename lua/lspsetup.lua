@@ -59,3 +59,15 @@ lspconfig['rust_analyzer'].setup({
     on_attach = on_attach,
     capapilities = capabilities,
 })
+
+-- Dockerfile
+lspconfig['dockerls'].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
+
+-- Yaml files
+lspconfig['yamlls'].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+})

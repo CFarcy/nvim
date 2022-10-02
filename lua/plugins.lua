@@ -91,6 +91,8 @@ return require('packer').startup(function(use)
     use { 'jose-elias-alvarez/null-ls.nvim' }
     use { 'onsails/lspkind.nvim' }
 
+    use { 'windwp/nvim-autopairs' }
+
     -- Git tracking
     use { 'tpope/vim-fugitive' }
 

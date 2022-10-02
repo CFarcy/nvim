@@ -1,6 +1,7 @@
 -- sets global config for neovim
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.cursorline = true
 vim.opt.autoindent = true
 vim.opt.smarttab = true
 vim.opt.mouse = "a"
@@ -15,3 +16,5 @@ vim.opt.scrolloff = 8
 vim.opt.swapfile = true
 vim.opt.wrap = false
 vim.opt.hlsearch = false
+vim.opt.signcolumn = "yes"
+vim.opt.colorcolumn = "119"
