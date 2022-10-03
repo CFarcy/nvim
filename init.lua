@@ -23,6 +23,7 @@ require('nvim-treesitter.configs').setup({
         "python",
         "javascript",
         "typescript",
+        "tsx",
         "rust",
         "lua",
     },
