@@ -29,7 +29,7 @@ require('nvim-treesitter.configs').setup({
     },
     highlight = { enable = true },
     --   treesitter indent not working well with python, :'(
-    indent = { enable = false },
+    indent = { enable = true },
 })
 
 require("autocmd")

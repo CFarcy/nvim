@@ -34,13 +34,14 @@ lspconfig['sumneko_lua'].setup({
 lspconfig['tsserver'].setup({
     on_attach = on_attach,
     capabilities = capabilities,
+    filetypes = {
+        'javascript',
+        'javascriptreact',
+        'typescript',
+        'typescriptreact',
+        'tsx',
+    },
 })
-
--- Eslint vscode server, needed ?
--- lspconfig['eslint'].setup({
---     on_attach = on_attach,
---     capabilities = capabilities,
--- })
 
 -- Python jedi, look likes the best for Django
 lspconfig['jedi_language_server'].setup({
@@ -70,4 +71,16 @@ lspconfig['dockerls'].setup({
 lspconfig['yamlls'].setup({
     on_attach = on_attach,
     capabilities = capabilities,
+})
+
+-- VueJS
+lspconfig['volar'].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = {'javascript', 'vue', 'json'},
+    init_options = {
+      typescript = {
+        serverPath = vim.fn.stdpath("data").."/mason/packages/typescript-language-server/node_modules/typescript/lib/tsserverlibrary.js"
+      },
+    },
 })
