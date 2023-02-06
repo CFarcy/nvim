@@ -5,3 +5,4 @@ setkeymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<
 setkeymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>")
 setkeymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>")
 setkeymap("n", "<leader>e", ":NvimTreeToggle<CR>")
+setkeymap("n", "<leader>af", "<cmd>lua vim.lsp.buf.format()<CR>")

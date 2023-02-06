@@ -1,3 +1,6 @@
+-- Map leader should go first
+vim.g.mapleader = " "
+
 -- Editor general settings 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -24,3 +27,7 @@ vim.opt.scrolloff = 8
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.wrap = false
+
+-- Nvim-tree ?
+vim.g.loaded = true
+vim.g.loaded_netrwPlugin = true

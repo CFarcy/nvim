@@ -92,6 +92,7 @@ return require('packer').startup(function(use)
     use { 'onsails/lspkind.nvim' }
 
     use { 'windwp/nvim-autopairs' }
+    use { 'windwp/nvim-ts-autotag' }
 
     -- Git tracking
     use { 'tpope/vim-fugitive' }

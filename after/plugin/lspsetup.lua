@@ -13,7 +13,7 @@ local on_attach = function ()
     vim.keymap.set('n', '<leader>df', '<cmd>Telescope diagnostics<cr>', {buffer=0})
 end
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local lspconfig = require('lspconfig')
 -- Lua
@@ -44,16 +44,16 @@ lspconfig['tsserver'].setup({
 })
 
 -- Python jedi, look likes the best for Django
-lspconfig['jedi_language_server'].setup({
-    on_attach = on_attach,
-    capapilities = capabilities,
-})
+-- lspconfig['jedi_language_server'].setup({
+--     on_attach = on_attach,
+--     capapilities = capabilities,
+-- })
 
 -- Python pyright, what is the difference with jedi?
--- lspconfig['pyright'].setup({
---     on_attach = on_attach,
---     capabilitites = capabilities,
--- })
+lspconfig['pyright'].setup({
+    on_attach = on_attach,
+    capabilitites = capabilities,
+})
 
 -- Rust
 lspconfig['rust_analyzer'].setup({
