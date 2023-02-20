@@ -8,6 +8,7 @@ vim.opt.cursorline = true
 vim.opt.mouse = "a"
 vim.opt.encoding = "UTF-8"
 vim.opt.hlsearch = false
+vim.opt.incsearch = true
 vim.opt.signcolumn = "yes"
 vim.opt.colorcolumn = "119"
 vim.opt.cmdheight = 1
@@ -28,6 +29,4 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.wrap = false
 
--- Nvim-tree ?
-vim.g.loaded = true
-vim.g.loaded_netrwPlugin = true
+vim.opt.updatetime = 50

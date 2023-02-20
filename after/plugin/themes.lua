@@ -40,7 +40,8 @@ vim.cmd [[highlight LineNr guibg=none guifg=#ffffff]]
 -- Lualine setup & theming
 require("lualine").setup({
     options = {
-         theme = "tokyonight"
+        theme = "tokyonight",
+        icons_enabled = true,
     },
     sections = {
         lualine_c = {
