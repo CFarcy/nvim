@@ -2,7 +2,7 @@ local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
 lsp.ensure_installed({
-    'jedi', -- for some reason, jedi give better insight for django than pyright
+    'jedi_language_server', -- for some reason, jedi give better insight for django than pyright
     'tsserver',
     'eslint',
     'lua_ls',
@@ -10,7 +10,7 @@ lsp.ensure_installed({
     'yamlls',
     'rust_analyzer'
 })
-
+--
 -- Fix Undefined global 'vim'
 lsp.configure('lua_ls', {
     settings = {

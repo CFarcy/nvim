@@ -5,7 +5,7 @@ vim.opt.termguicolors = true
 
 require("nvim-tree").setup({
     view = {
-        width = 35,
+        width = 50,
     },
     git = {
         enable = true,

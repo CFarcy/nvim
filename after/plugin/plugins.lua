@@ -45,7 +45,15 @@ return require('packer').startup(function(use)
     use { 'folke/tokyonight.nvim' }
     use { 'catppuccin/nvim',  as =  'catppucin' }
     use { 'gruvbox-community/gruvbox' }
-
+    use({
+        'rose-pine/neovim',
+        as = 'rose-pine',
+--        config = function()
+--            require("rose-pine").setup()
+--            vim.cmd('colorscheme rose-pine')
+--        end
+    })
+    --
     -- Some vim line
     use {
         'nvim-lualine/lualine.nvim',
@@ -112,6 +120,9 @@ return require('packer').startup(function(use)
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+
+    -- Productivity
+    use { 'folke/zen-mode.nvim' }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
