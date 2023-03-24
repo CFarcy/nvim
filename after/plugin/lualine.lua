@@ -2,7 +2,7 @@
 require("lualine").setup({
     options = {
         -- tokyonight, catpuccin, rose-pine, etc..
-        theme = "gruvbox",
+        theme = "auto",
         icons_enabled = true,
     },
     sections = {
