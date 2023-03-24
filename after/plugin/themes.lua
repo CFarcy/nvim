@@ -1,39 +1,35 @@
 -- Theming config
--- Examples: 
---
--- Catppuccin
--- vim.g.catppuccin_flavour = "frappe" -- latte, frappe, macchiato, mocha
--- require("catppuccin").setup({
---     transparent_background = true,
--- })
--- vim.cmd [[colorscheme catppuccin]]
--- 
--- Gruvbox community
--- vim.cmd [[colorscheme gruvbox]]
--- set background opacity to none ?
--- Keep line numbers white
---
--- Poimandres
---require('poimandres').setup({
---  bold_vert_split = false, -- use bold vertical separators
---  dim_nc_background = false, -- dim 'non-current' window backgrounds
---  disable_background = true, -- disable background
---  disable_float_background = true, -- disable background for floats
---  disable_italics = false, -- disable italics
---})
--- vim.cmd [[colorscheme poimandres]]
---
--- TokyoNight
+require('poimandres').setup({
+  bold_vert_split = false, -- use bold vertical separators
+  dim_nc_background = true, -- dim 'non-current' window backgrounds
+  disable_background = true,
+  disable_float_background = true,
+  disable_italics = false,
+})
+
 require("tokyonight").setup({
     style = "moon",
     transparent = true,
     styles = {
         sidebars = "transparent",
---        floats = "transparent",
+        floats = "transparent",
     },
     sidebars = { "nvim-tree" },
 })
-vim.cmd [[colorscheme gruvbox]]
-vim.cmd [[highlight Normal guibg=none]]
--- vim.cmd [[highlight LineNr guibg=none guifg=#ffffff]]
 
+require("catppuccin").setup({
+    transparent_background = true,
+})
+
+require("rose-pine").setup({
+    disable_background = true,
+})
+
+function ColorMe(color)
+    color = color or "gruvbox"
+    vim.cmd.colorscheme(color)
+    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+end
+
+ColorMe()

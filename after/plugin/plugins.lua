@@ -45,15 +45,9 @@ return require('packer').startup(function(use)
     use { 'folke/tokyonight.nvim' }
     use { 'catppuccin/nvim',  as =  'catppucin' }
     use { 'gruvbox-community/gruvbox' }
-    use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
---        config = function()
---            require("rose-pine").setup()
---            vim.cmd('colorscheme rose-pine')
---        end
-    })
-    --
+    use({ 'rose-pine/neovim', as = 'rose-pine' })
+    use({ 'olivercederborg/poimandres.nvim' })
+
     -- Some vim line
     use {
         'nvim-lualine/lualine.nvim',
