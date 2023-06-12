@@ -108,6 +108,12 @@ return require('packer').startup(function(use)
 
     -- Git tracking
     use { 'tpope/vim-fugitive' }
+    use {
+        'tanvirtin/vgit.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim'
+        }
+    }
 
     -- Telescope
     use {
