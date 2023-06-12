@@ -21,6 +21,15 @@ lsp.configure('lua_ls', {
         }
     }
 })
+local lspconfig = require('lspconfig')
+lspconfig.eslint.setup({
+    filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue' },
+    settings = {
+        workingDirectory = { mode = 'auto' },
+        format = { enable = true },
+        lint = { enable = true },
+    }
+})
 
 lsp.setup()
 local lspkind = require('lspkind')
@@ -30,10 +39,24 @@ cmp.setup({
         format = lspkind.cmp_format({
             mode = "text_symbol",
         })
-    }
+    },
+    window = {
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
+    },
+    mapping = cmp.mapping.preset.insert({
+      ['<C-n>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-p>'] = cmp.mapping.scroll_docs(4),
+      ['<CR>'] = cmp.mapping.complete(),
+      ['<ESC>'] = cmp.mapping.abort(),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    }),
 })
 
 vim.diagnostic.config({
-    virtual_text = true
+    virtual_text = true,
+    float = { border = 'solid' }
 })
 
+-- Add border to lspinfo floating window
+require('lspconfig.ui.windows').default_options.border = 'single'
