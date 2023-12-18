@@ -48,7 +48,7 @@ cmp.setup({
       ['<C-n>'] = cmp.mapping.scroll_docs(-4),
       ['<C-p>'] = cmp.mapping.scroll_docs(4),
       ['<CR>'] = cmp.mapping.complete(),
-      ['<ESC>'] = cmp.mapping.abort(),
+      ['<C-Space>'] = cmp.mapping.abort(),
       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
 })

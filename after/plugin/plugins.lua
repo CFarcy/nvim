@@ -47,6 +47,7 @@ return require('packer').startup(function(use)
     use { 'gruvbox-community/gruvbox' }
     use({ 'rose-pine/neovim', as = 'rose-pine' })
     use({ 'olivercederborg/poimandres.nvim' })
+    use ({ 'shaunsingh/nord.nvim' })
 
     -- Some vim line
     use {
@@ -114,6 +115,13 @@ return require('packer').startup(function(use)
             'nvim-lua/plenary.nvim'
         }
     }
+    use {
+        "kdheepak/lazygit.nvim",
+        -- optional for floating window border decoration
+        requires = {
+            "nvim-lua/plenary.nvim",
+        },
+    }
 
     -- Telescope
     use {
@@ -127,6 +135,7 @@ return require('packer').startup(function(use)
 
     -- Productivity
     use { 'folke/zen-mode.nvim' }
+    use { 'simrat39/symbols-outline.nvim' }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

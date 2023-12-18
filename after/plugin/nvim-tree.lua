@@ -5,11 +5,16 @@ vim.opt.termguicolors = true
 
 require("nvim-tree").setup({
     view = {
-        width = 40,
+        width = 35,
         side = "right",
     },
     git = {
         enable = true,
         ignore = false,
-    }
+    },
+    actions = {
+        open_file = {
+            quit_on_open = true,
+        },
+    },
 })
